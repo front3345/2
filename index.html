@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1, 2, 3, 4. Ask the user for information
+let studentName = prompt("Enter your name:");
+let studentAgeStr = prompt("Enter your age:");
+let studentGrade = prompt("Enter your grade:");
+let studentMarksStr = prompt("Enter your total marks out of 100:");
+
+// 5. Convert age and total marks into numbers
+let age = Number(studentAgeStr);
+let marks = Number(studentMarksStr);
+
+// 6. student's age after 5 years
+let ageAfter5Years = age + 5;
+
+// 7. student's remaining marks needed to get 100
+let remainingMarks = 100 - marks;
+
+// 8, 9, 10. Check the student is under 18 or 18+, and check pass/fail
+let statusText = "";
+if (age >= 18) {
+    if (marks >= 50) {
+        statusText = "Passed";
+    } else {
+        statusText = "Failed";
+    }
+} else {
+    statusText = "You are under 18.";
+}
+
+// 11. performance level according to their marks
+let performance = "";
+if (marks >= 90 && marks <= 100) {
+    performance = "Excellent";
+} else if (marks >= 75 && marks <= 89) {
+    performance = "Very Good";
+} else if (marks >= 50 && marks <= 74) {
+    performance = "Good";
+} else {
+    performance = "Fail";
+}
+
+// 13. student's age is between 18 and 60 and marks are 50 or more
+let check13 = (age >= 18 && age <= 60 && marks >= 50);
+
+// 14. under 18 or has marks less than 50
+let check14 = (age < 18 || marks < 50);
+
+// 15.representing a student type
+let studentTypePrompt = prompt("Choose a number representing a student type:\n1 -> Regular Student\n2 -> ITI Student\n3 -> University Student");
+let studentTypeNum = Number(studentTypePrompt);
+let studentTypeResult = "";
+
+switch (studentTypeNum) {
+    case 1:
+        studentTypeResult = "Regular Student";
+        break;
+    case 2:
+        studentTypeResult = "ITI Student";
+        break;
+    case 3:
+        studentTypeResult = "University Student";
+        break;
+    default:
+        studentTypeResult = "Invalid Student Type";
+        break;
+}
+
+// Output
+document.write("Student Name: " + studentName + "<br>");
+document.write("Age: " + age + "<br>");
+document.write("Grade: " + studentGrade + "<br>");
+document.write("Age after 5 years: " + ageAfter5Years + "<br>");
+document.write("Marks: " + marks + "<br>");
+document.write("Remaining Marks: " + remainingMarks + "<br>");
+document.write("Status: " + statusText + "<br>");
+document.write("Performance: " + performance + "<br>");
+document.write("Check 13 : " + check13 + "<br>");
+document.write("Check 14 : " + check14 + "<br>");
+document.write("Student Type: " + studentTypeResult + "<br>");
+</script>
+</body>
+</html>
